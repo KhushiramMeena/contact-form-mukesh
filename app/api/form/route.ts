@@ -7,7 +7,6 @@ export async function POST(request: NextRequest): Promise<NextResponse<unknown>>
   try {
     const { name, email, message, company } = await request.json();
 
-    // Save the form submission to the database
     const submission = await prisma.dataForm.create({
       data: {
         name,
